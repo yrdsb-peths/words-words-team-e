@@ -12,7 +12,7 @@ public class MenuScreen extends World
         loadThemes();
         currentTheme = themeQueue.peek();
         themeLabel = new Label(currentTheme, 100, 100);
-        themeLabel.equals(currentTheme);
+        themeLabel.setText(currentTheme);
         Label themeCycleName= new Label("cycle Avatars", 25);
         addObject(themeCycleName, 300, 250);
         addObject(new Button(this::cycleTheme), 300, 275);
