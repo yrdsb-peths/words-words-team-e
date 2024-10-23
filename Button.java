@@ -7,7 +7,7 @@ public class Button extends Actor
     public Button(Runnable action) 
     {
         this.action = action;
-        GreenfootImage image = new GreenfootImage("images/pngtree-blue-game-button-png-image_5402465.jpg");
+        GreenfootImage image = new GreenfootImage("images/pixil-frame-0 (6).png");
         setImage(image);
     }
 
