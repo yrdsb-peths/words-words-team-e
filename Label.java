@@ -36,9 +36,10 @@ public class Label extends Actor
     }
     
 
-    public Label(Label currentScreen, int value, int fontSize)
+    public Label(Label currentTheme, int value, int fontSize)
     {
         this(Integer.toString(value), fontSize);
+        updateImage();
     }
 
     
