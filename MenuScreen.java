@@ -14,6 +14,7 @@ public class MenuScreen extends World
         themeLabel = new Label(currentTheme, 100, 100);
         themeLabel.setImage(currentTheme);
         Label themeCycleName= new Label("cycle Avatars", 25);
+        addObject(themeLabel, 300, 250);
         addObject(themeCycleName, 150, 250);
         addObject(new Button(this::cycleTheme), 300, 275);
 
