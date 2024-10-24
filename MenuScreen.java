@@ -10,7 +10,7 @@ public class MenuScreen extends World
         super(600,400,1);
         themeQueue = new Queues<>();
         loadThemes();
-        setBackground("BackgroundPlanks.png");
+        setBackground("Brown copy.png");
         currentTheme = themeQueue.peek();
         themeLabel = new Label(currentTheme, 100, 100);
         themeLabel.setImage(currentTheme);
