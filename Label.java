@@ -55,11 +55,6 @@ public class Label extends Actor
         this.value = Integer.toString(value);
         updateImage();
     }
-    public void setText(Label label)
-    {
-        
-        updateImage();
-    }
     
     
     public void setLineColor(Color lineColor)
