@@ -10,7 +10,7 @@ public class FoodList extends World
 {
     public String[] food = 
     {
-        "apple",
+         "apple",
         "asparagus",
         "bagel",
         "banana",
@@ -64,8 +64,10 @@ public class FoodList extends World
         "pizza",
         "popcorn",
         "potato",
+        "poutine",
         "pumpkin",
         "radish",
+        "ramen",
         "ravioli",
         "rice",
         "rum",
