@@ -18,8 +18,8 @@ public class MenuScreen extends World
         Label themeCycleName= new Label("Cycle Themes", 25);
         addObject(themeLabel, 300, 200);
         addObject(themeCycleName, 150, 250);
-        addObject(new Button(this::goToGameScreen, "StartButtonIdle.png",248, 112), 300, 350);
-        addObject(new Button(this::cycleTheme, "CycleButton.png",248, 112), 300, 275);
+        addObject(new Button(this::goToGameScreen, "StartButtonIdle.png",186, 86), 300, 350);
+        addObject(new Button(this::cycleTheme, "CycleButton.png",186, 86), 300, 275);
         
     }
     private void loadThemes() 
