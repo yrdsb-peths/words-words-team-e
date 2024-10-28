@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FoodList extends World
 {
-    public String[] food = 
+    public static String[] food = 
     {
         "apple",
         "asparagus",
