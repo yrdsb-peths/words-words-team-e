@@ -1,6 +1,7 @@
 import greenfoot.*;
 public class GameScreen extends World {
     String myStr;
+    public int index = Greenfoot.getRandomNumber(74);
     public GameScreen() {
         super(600, 400, 1);
 
