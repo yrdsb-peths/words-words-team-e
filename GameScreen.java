@@ -13,6 +13,24 @@ public class GameScreen extends World {
             
             }
         }
+
+        else if(MenuScreen.themeType==1) {
+            myStr=FoodList.food[1];
+            char[] charArray = myStr.toCharArray();
+            for (char s : charArray) {
+                System.out.println(s);
+            
+            }
+        }
+
+        else {
+            myStr=CountriesList.countries[1];
+            char[] charArray = myStr.toCharArray();
+            for (char s : charArray) {
+                System.out.println(s);
+            
+            }
+        }
     }
     
 }
