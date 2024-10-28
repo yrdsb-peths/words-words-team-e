@@ -5,6 +5,7 @@ public class MenuScreen extends World
     private Queues<GreenfootImage> themeQueue;
     private GreenfootImage currentTheme;
     private Label themeLabel;
+    public static int themeType=0;
     public MenuScreen()
     {
         super(600,400,1);
@@ -33,6 +34,12 @@ public class MenuScreen extends World
         themeQueue.enqueue(firstTheme);
         currentTheme = themeQueue.peek();
         themeLabel.setImage(currentTheme);
-    
+        if(themeType<2){
+            themeType++;
+        }
+        else
+        {
+            themeType=0;
+        }
     }
 }
