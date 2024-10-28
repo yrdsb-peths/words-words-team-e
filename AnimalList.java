@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class AnimalList extends World
 {
-    public String[] animals =
+    public static String[] animals =
     {
         "aardvark",
         "albatross",
