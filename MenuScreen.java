@@ -19,6 +19,7 @@ public class MenuScreen extends World
         addObject(themeLabel, 300, 200);
         addObject(themeCycleName, 150, 250);
         addObject(new Button(this::cycleTheme), 300, 275);
+        addObject(new Button(this::goToGameScreen), 300, 325);
         
     }
     private void loadThemes() 
@@ -41,5 +42,9 @@ public class MenuScreen extends World
         {
             themeType=0;
         }
+    }
+    public void goToGameScreen() 
+    {
+        Greenfoot.setWorld(new GameScreen()); 
     }
 }
