@@ -5,11 +5,13 @@ public class GameScreen extends World {
     public GameScreen() {
         super(600, 400, 1);
 
-        myStr=AnimalList.animals[1];
-        char[] charArray = myStr.toCharArray();
-        for (char s : charArray) {
-            System.out.println(s);
-        
+        if (MenuScreen.themeType==0){
+            myStr=AnimalList.animals[1];
+            char[] charArray = myStr.toCharArray();
+            for (char s : charArray) {
+                System.out.println(s);
+            
+            }
         }
     }
     
