@@ -67,6 +67,14 @@ public class GameScreen extends World {
             
             }
             System.out.println(firstLetter);
+            System.out.println(secondLetter);
+            System.out.println(thirdLetter);
+            System.out.println(fourthLetter);
+            System.out.println(fifthLetter);
+            System.out.println(sixthLetter);
+            System.out.println(seventhLetter);
+            System.out.println(eighthLetter);
+            System.out.println(ninthLetter);
         
         }
         
