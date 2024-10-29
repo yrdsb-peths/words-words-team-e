@@ -68,7 +68,8 @@ public class GameScreen extends World {
             }
         
         }
-        
+        Label letterOne= new Label(firstLetter, 25);
+        addObject(letterOne, 200, 200);
     }
 
     
