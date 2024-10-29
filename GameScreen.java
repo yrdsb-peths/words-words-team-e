@@ -118,8 +118,9 @@ public class GameScreen extends World {
             }
         
         }
-        Label letterOne= new Label(firstLetter, 100);
+        Label letterOne = new Label(String.valueOf(firstLetter), 100);
         addObject(letterOne, 200, 200);
+
     }
 
     
