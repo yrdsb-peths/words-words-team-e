@@ -120,7 +120,7 @@ public class GameScreen extends World {
         }
         Label letterOne = new Label(String.valueOf(firstLetter), 100);
         addObject(letterOne, 200, 200);
-        Label letterTwo = new Label(String.valueOf(secondLetterLetter), 100);
+        Label letterTwo = new Label(String.valueOf(secondLetter), 100);
         addObject(letterTwo, 250, 200);
         Label letterThree = new Label(String.valueOf(thirdLetter), 100);
         addObject(letterThree, 300, 200);
