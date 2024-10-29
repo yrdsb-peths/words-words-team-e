@@ -20,7 +20,32 @@ public class GameScreen extends World {
             myStr=AnimalList.animals[index];
             char[] charArray = myStr.toCharArray();
             for (char s : charArray) {
-                System.out.println(s);
+                if(letter==0){
+                    firstLetter = s;
+                }else if(letter==1){
+                    secondLetter = s;
+                }else if(letter==2){
+                    thirdLetter = s;
+                }
+                else if(letter==3){
+                    fourthLetter = s;
+                }
+                else if(letter==4){
+                    fifthLetter = s;
+                }
+                else if(letter==5){
+                    sixthLetter = s;
+                }
+                else if(letter==6){
+                    seventhLetter = s;
+                }
+                else if(letter==7){
+                    eighthLetter = s;
+                }
+                else if(letter==8){
+                    ninthLetter = s;
+                }
+                letter++;
             
             }
         }
@@ -29,7 +54,32 @@ public class GameScreen extends World {
             myStr=FoodList.food[index];
             char[] charArray = myStr.toCharArray();
             for (char s : charArray) {
-                System.out.println(s);
+                if(letter==0){
+                    firstLetter = s;
+                }else if(letter==1){
+                    secondLetter = s;
+                }else if(letter==2){
+                    thirdLetter = s;
+                }
+                else if(letter==3){
+                    fourthLetter = s;
+                }
+                else if(letter==4){
+                    fifthLetter = s;
+                }
+                else if(letter==5){
+                    sixthLetter = s;
+                }
+                else if(letter==6){
+                    seventhLetter = s;
+                }
+                else if(letter==7){
+                    eighthLetter = s;
+                }
+                else if(letter==8){
+                    ninthLetter = s;
+                }
+                letter++;
             
             }
         }
