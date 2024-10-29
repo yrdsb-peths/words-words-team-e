@@ -120,6 +120,23 @@ public class GameScreen extends World {
         }
         Label letterOne = new Label(String.valueOf(firstLetter), 100);
         addObject(letterOne, 200, 200);
+        Label letterTwo = new Label(String.valueOf(firstLetter), 100);
+        addObject(letterTwo250, 200);
+        Label letterThree = new Label(String.valueOf(firstLetter), 100);
+        addObject(letterThree, 300, 200);
+        Label letterFour = new Label(String.valueOf(firstLetter), 100);
+        addObject(letterFour, 350, 200);
+        Label letterFive = new Label(String.valueOf(firstLetter), 100);
+        addObject(letterFive, 400, 200);
+        Label letterSix = new Label(String.valueOf(firstLetter), 100);
+        addObject(letterSix, 450, 200);
+        Label letterSeven = new Label(String.valueOf(firstLetter), 100);
+        addObject(letterSeven, 500, 200);
+        Label letterEight = new Label(String.valueOf(firstLetter), 100);
+        addObject(letterEight, 550, 200);
+        Label letterNine = new Label(String.valueOf(firstLetter), 100);
+        addObject(letterNine, 600, 200);
+        
 
     }
 
