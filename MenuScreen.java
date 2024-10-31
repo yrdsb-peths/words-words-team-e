@@ -9,6 +9,7 @@ public class MenuScreen extends World
     public MenuScreen()
     {
         super(600,400,1);
+        themeType=0;
         themeQueue = new Queues<>();
         loadThemes();
         setBackground("Brown copy.png");
