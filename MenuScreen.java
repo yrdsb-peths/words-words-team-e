@@ -5,9 +5,11 @@ public class MenuScreen extends World
     private Queues<GreenfootImage> themeQueue;
     private GreenfootImage currentTheme;
     private Label themeLabel;
+    public static int themeType=0;
     public MenuScreen()
     {
         super(600,400,1);
+        themeType=0;
         themeQueue = new Queues<>();
         loadThemes();
         setBackground("Brown copy.png");
@@ -17,7 +19,8 @@ public class MenuScreen extends World
         Label themeCycleName= new Label("Cycle Themes", 25);
         addObject(themeLabel, 300, 200);
         addObject(themeCycleName, 150, 250);
-        addObject(new Button(this::cycleTheme), 300, 275);
+        addObject(new Button(this::goToGameScreen, "StartButtonIdle.png",114, 56), 300, 350);
+        addObject(new Button(this::cycleTheme, "CycleButton.png",114, 56), 300, 275);
         
     }
     private void loadThemes() 
@@ -33,6 +36,16 @@ public class MenuScreen extends World
         themeQueue.enqueue(firstTheme);
         currentTheme = themeQueue.peek();
         themeLabel.setImage(currentTheme);
-    
+        if(themeType<2){
+            themeType++;
+        }
+        else if(themeType==2)
+        {
+            themeType=0;
+        }
+    }
+    public void goToGameScreen() 
+    {
+        Greenfoot.setWorld(new GameScreen()); 
     }
 }

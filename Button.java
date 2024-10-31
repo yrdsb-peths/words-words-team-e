@@ -1,12 +1,13 @@
 import greenfoot.*;
 
-public class Button extends Actor
-{
+public class Button extends Actor {
     private Runnable action;
 
-    public Button(Runnable action) {
+    public Button(Runnable action, String imageFileName, int width, int height) {
         this.action = action;
-        setImage(new GreenfootImage("pixil-frame-0 (6).png"));
+        GreenfootImage image = new GreenfootImage(imageFileName);
+        image.scale(width, height);
+        setImage(image);
     }
 
     public void act() {

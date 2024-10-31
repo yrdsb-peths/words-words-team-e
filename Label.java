@@ -49,7 +49,6 @@ public class Label extends Actor
         updateImage();
     }
     
-    
     public void setValue(int value)
     {
         this.value = Integer.toString(value);

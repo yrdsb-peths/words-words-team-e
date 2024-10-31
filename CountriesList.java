@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CountriesList extends World
 {
-    public String[] countries = 
+    public static String[] countries = 
     {
          "algeria",
         "america",
