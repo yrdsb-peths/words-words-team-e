@@ -38,7 +38,7 @@ public class MenuScreen extends World
         if(themeType<2){
             themeType++;
         }
-        else
+        else if(themeType==2)
         {
             themeType=0;
         }

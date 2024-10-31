@@ -84,7 +84,8 @@ public class GameScreen extends World {
             }
         }
 
-        else {
+        else if(MenuScreen.themeType==2)
+        {
             myStr=CountriesList.countries[index];
             char[] charArray = myStr.toCharArray();
             for (char s : charArray) {
