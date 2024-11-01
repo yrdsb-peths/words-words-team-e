@@ -139,27 +139,27 @@ public class GameScreen extends World {
             }
         
         }
-        Label letterOne = new Label(String.valueOf(firstLetter), 100);
+        Label letterOne = null;
         addObject(letterOne, 150, 200);
-        Label letterTwo = new Label(String.valueOf(secondLetter), 100);
+        Label letterTwo = null;
         addObject(letterTwo, 200, 200);
-        Label letterThree = new Label(String.valueOf(thirdLetter), 100);
+        Label letterThree = null;
         addObject(letterThree, 250, 200);
-        Label letterFour = new Label(String.valueOf(fourthLetter), 100);
+        Label letterFour = null;
         addObject(letterFour, 300, 200);
-        Label letterFive = new Label(String.valueOf(fifthLetter), 100);
+        Label letterFive = null;
         addObject(letterFive, 350, 200);
-        Label letterSix = new Label(String.valueOf(sixthLetter), 100);
+        Label letterSix = null;
         addObject(letterSix, 400, 200);
-        Label letterSeven = new Label(String.valueOf(seventhLetter), 100);
+        Label letterSeven = null;
         addObject(letterSeven, 450, 200);
-        Label letterEight = new Label(String.valueOf(eighthLetter), 100);
+        Label letterEight = null;
         addObject(letterEight, 500, 200);
-        Label letterNine = new Label(String.valueOf(ninthLetter), 100);
+        Label letterNine = null;
         addObject(letterNine, 550, 200);
-        Label letterTen = new Label(String.valueOf(tenthLetter), 100);
+        Label letterTen = null;
         addObject(letterTen, 600, 200);
-        Label letterEleven = new Label(String.valueOf(eleventhLetter), 100);
+        Label letterEleven = null;
         addObject(letterEleven, 650, 200);
         addObject(new Button(this::inputMethod, "StartButtonIdle.png",114, 56), 300, 350);
 
