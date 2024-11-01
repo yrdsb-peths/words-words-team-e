@@ -161,9 +161,33 @@ public class GameScreen extends World {
         addObject(letterTen, 600, 200);
         Label letterEleven = new Label(String.valueOf(eleventhLetter), 100);
         addObject(letterEleven, 650, 200);
-        
+        addObject(new Button(this::inputMethod, "StartButtonIdle.png",114, 56), 300, 350);
 
     }
+    public void inputMethod()
+    {
+        char[] charArray = new char[11];
+        charArray[0] = firstLetter;
+        charArray[1] = secondLetter;
+        charArray[2] = thirdLetter;
+        charArray[3] = fourthLetter;
+        charArray[4] = fifthLetter;
+        charArray[5] = sixthLetter;
+        charArray[6] = seventhLetter;
+        charArray[7] = eighthLetter;
+        charArray[8] = ninthLetter;
+        charArray[9] = tenthLetter;
+        charArray[10] = eleventhLetter;
 
+        String input= Greenfoot.ask("Input");
+        char[] answer=input.toCharArray();
+        for(int i=0; i>charArray.length; i++)
+        {
+            if(answer[1]==charArray[i]){
+                System.out.println("Nice");
+            }
+        }
+
+    }
     
 }
