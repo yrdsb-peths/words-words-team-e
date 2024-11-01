@@ -180,9 +180,8 @@ public class GameScreen extends World {
         charArray[10] = eleventhLetter;
         String input= Greenfoot.ask("Input");
         char[] answer=input.toCharArray();
-        for(int i=0; i>charArray.length; i++)
+        for(int i=0; i<charArray.length; i++)
         {
-            System.out.println("Nice");
             if(answer[0]==charArray[i]){
                 System.out.println("Nice");
             }
