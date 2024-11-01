@@ -10,6 +10,8 @@ public class GameScreen extends World {
     char seventhLetter;
     char eighthLetter;
     char ninthLetter;
+    char tenthLetter;
+    char eleventhLetter;
     int letter=0;
     public int index = Greenfoot.getRandomNumber(74);
     public GameScreen() {
@@ -45,6 +47,12 @@ public class GameScreen extends World {
                 else if(letter==8){
                     ninthLetter = s;
                 }
+                else if(letter==9){
+                    tenthLetter = s;
+                }
+                else if(letter==10){
+                    eleventhLetter = s;
+                }
                 letter++;
             
             }
@@ -78,6 +86,12 @@ public class GameScreen extends World {
                 }
                 else if(letter==8){
                     ninthLetter = s;
+                }
+                else if(letter==9){
+                    tenthLetter = s;
+                }
+                else if(letter==10){
+                    eleventhLetter = s;
                 }
                 letter++;
             
@@ -114,29 +128,39 @@ public class GameScreen extends World {
                 else if(letter==8){
                     ninthLetter = s;
                 }
+                else if(letter==9){
+                    tenthLetter = s;
+                }
+                else if(letter==10){
+                    eleventhLetter = s;
+                }
                 letter++;
             
             }
         
         }
         Label letterOne = new Label(String.valueOf(firstLetter), 100);
-        addObject(letterOne, 200, 200);
+        addObject(letterOne, 150, 200);
         Label letterTwo = new Label(String.valueOf(secondLetter), 100);
-        addObject(letterTwo, 250, 200);
+        addObject(letterTwo, 200, 200);
         Label letterThree = new Label(String.valueOf(thirdLetter), 100);
-        addObject(letterThree, 300, 200);
+        addObject(letterThree, 250, 200);
         Label letterFour = new Label(String.valueOf(fourthLetter), 100);
-        addObject(letterFour, 350, 200);
+        addObject(letterFour, 300, 200);
         Label letterFive = new Label(String.valueOf(fifthLetter), 100);
-        addObject(letterFive, 400, 200);
+        addObject(letterFive, 350, 200);
         Label letterSix = new Label(String.valueOf(sixthLetter), 100);
-        addObject(letterSix, 450, 200);
+        addObject(letterSix, 400, 200);
         Label letterSeven = new Label(String.valueOf(seventhLetter), 100);
-        addObject(letterSeven, 500, 200);
+        addObject(letterSeven, 450, 200);
         Label letterEight = new Label(String.valueOf(eighthLetter), 100);
-        addObject(letterEight, 550, 200);
+        addObject(letterEight, 500, 200);
         Label letterNine = new Label(String.valueOf(ninthLetter), 100);
-        addObject(letterNine, 600, 200);
+        addObject(letterNine, 550, 200);
+        Label letterTen = new Label(String.valueOf(tenthLetter), 100);
+        addObject(letterTen, 600, 200);
+        Label letterEleven = new Label(String.valueOf(eleventhLetter), 100);
+        addObject(letterEleven, 650, 200);
         
 
     }
