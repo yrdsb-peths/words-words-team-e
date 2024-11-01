@@ -183,7 +183,7 @@ public class GameScreen extends World {
         char[] answer=input.toCharArray();
         for(int i=0; i>charArray.length; i++)
         {
-            if(answer[1]==charArray[i]){
+            if(answer[0]==charArray[i]){
                 System.out.println("Nice");
             }
         }
