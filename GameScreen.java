@@ -1,6 +1,7 @@
 import greenfoot.*;
 public class GameScreen extends World {
     String myStr;
+    int revealedCount = 0;
     char firstLetter;
     char secondLetter;
     char thirdLetter;
@@ -71,6 +72,7 @@ public class GameScreen extends World {
         char[] charArray = { firstLetter, secondLetter, thirdLetter, fourthLetter, fifthLetter, 
                             sixthLetter, seventhLetter, eighthLetter, ninthLetter, tenthLetter, 
                             eleventhLetter };
+        System.out.println(charArray);
 
         String input = Greenfoot.ask("Input");
         if (input == null || input.isEmpty()) {
@@ -81,24 +83,27 @@ public class GameScreen extends World {
         if (input.length() == 1) {
             char answer = Character.toLowerCase(input.charAt(0));
             System.out.println("User input: " + answer);
-
             boolean found = false;
+
             for (int i = 0; i < charArray.length; i++) {
                 if (answer == Character.toLowerCase(charArray[i])) {
                     System.out.println("Match found at index: " + i);
                     revealLetter(i, charArray[i]);
                     found = true;
-                    break;
+                    revealedCount++;
                 }
             }
-            if (!found) {
+
+            if (found) {
+                checkGameEnd();
+            } else {
                 System.out.println("No match found for: " + answer);
             }
         } else {
             System.out.println("Input length is not 1: " + input.length());
-
         }
     }
+
     public void revealLetter(int index, char letter) {
         String letterStr = Character.toString(letter); 
         switch (index) {
@@ -113,6 +118,14 @@ public class GameScreen extends World {
             case 8: letterNine.setValue(letterStr); break;
             case 9: letterTen.setValue(letterStr); break;
             case 10: letterEleven.setValue(letterStr); break;
+        }
+    }
+    private void checkGameEnd() {
+        if (revealedCount == myStr.length()) {
+            System.out.println("Congratulations! You've found the word: " + myStr);
+            
+            Greenfoot.stop(); 
+            
         }
     }
 
