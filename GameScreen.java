@@ -186,21 +186,20 @@ public class GameScreen extends World {
     }
     
 
-    public void revealLetter(int index, char letter)
-    {
+    public void revealLetter(int index, char letter) {
+        String letterStr = Character.toString(letter); 
         switch (index) {
-            case 0: letterOne.setValue(letter); break;
-            case 1: letterTwo.setValue(letter); break;
-            case 2: letterThree.setValue(letter); break;
-            case 3: letterFour.setValue(letter); break;
-            case 4: letterFive.setValue(letter); break;
-            case 5: letterSix.setValue(letter); break;
-            case 6: letterSeven.setValue(letter); break;
-            case 7: letterEight.setValue(letter); break;
-            case 8: letterNine.setValue(letter); break;
-            case 9: letterTen.setValue(letter); break;
-            case 10: letterEleven.setValue(letter); break;
-            
+            case 0: letterOne.setValue(letterStr); break;
+            case 1: letterTwo.setValue(letterStr); break;
+            case 2: letterThree.setValue(letterStr); break;
+            case 3: letterFour.setValue(letterStr); break;
+            case 4: letterFive.setValue(letterStr); break;
+            case 5: letterSix.setValue(letterStr); break;
+            case 6: letterSeven.setValue(letterStr); break;
+            case 7: letterEight.setValue(letterStr); break;
+            case 8: letterNine.setValue(letterStr); break;
+            case 9: letterTen.setValue(letterStr); break;
+            case 10: letterEleven.setValue(letterStr); break;
         }
     }
 }
