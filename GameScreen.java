@@ -72,6 +72,10 @@ public class GameScreen extends World {
                              eleventhLetter };
     
         String input = Greenfoot.ask("Input");
+        if (input == null || input.isEmpty()) {
+            System.out.println("null or empty");
+            return;
+        }
         if (input.length() == 1) {
             char answer = input.charAt(0);
             System.out.println(answer);
