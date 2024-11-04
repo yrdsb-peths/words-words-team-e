@@ -12,20 +12,20 @@ public class GameScreen extends World {
     char ninthLetter;
     char tenthLetter;
     char eleventhLetter;
-    Label letterOne = null;
-    Label letterTwo = null;
-    Label letterThree = null;
-    Label letterFour = null;
-    Label letterFive = null;
-    Label letterSix = null;
-    Label letterSeven = null;
-    Label letterEight = null;
-    Label letterNine = null;
-    Label letterTen = null;
-    Label letterEleven = null;
+    Label letterOne = new Label("",50);
+    Label letterTwo = new Label("", 50);
+    Label letterThree = new Label("",50);
+    Label letterFour = new Label("",50);
+    Label letterFive = new Label("",50);
+    Label letterSix = new Label("",50);
+    Label letterSeven = new Label("",50);
+    Label letterEight = new Label("",50);
+    Label letterNine = new Label("",50);
+    Label letterTen = new Label("",50);
+    Label letterEleven = new Label("",50);
     int letter=0;
     public int index = Greenfoot.getRandomNumber(74);
-    public GameScreen(World menuScreen) {
+    public GameScreen() {
         super(600, 400, 1);
 
         if (MenuScreen.themeType == 0) {
