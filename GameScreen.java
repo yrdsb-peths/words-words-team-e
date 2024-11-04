@@ -66,26 +66,27 @@ public class GameScreen extends World {
         addObject(new Button(this::inputMethod, "StartButtonIdle.png",114, 56), 300, 350);
 
     }
-    public void inputMethod()
-    {
+    public void inputMethod() {
         char[] charArray = { firstLetter, secondLetter, thirdLetter, fourthLetter, fifthLetter, 
-                            sixthLetter, seventhLetter, eighthLetter, ninthLetter, tenthLetter, 
-                            eleventhLetter };
-
+                             sixthLetter, seventhLetter, eighthLetter, ninthLetter, tenthLetter, 
+                             eleventhLetter };
+    
         String input = Greenfoot.ask("Input");
         if (input.length() == 1) {
             char answer = input.charAt(0);
-
-            for (int i = 0; i < charArray.length; i++)
-            {
+            System.out.println(answer);
+    
+            for (int i = 0; i < charArray.length; i++) {
+                System.out.println(charArray[i]);
                 if (answer == charArray[i]) {
-
+                    System.out.println(i);
                     revealLetter(i, answer);
-                    break; 
+                    break;
                 }
             }
         }
     }
+    
 
     public void revealLetter(int index, char letter)
     {
