@@ -27,38 +27,40 @@ public class GameScreen extends World {
     Label letterEleven = new Label("_",50);
     int letter=0;
     public int index = Greenfoot.getRandomNumber(74);
+
     public GameScreen() {
-    super(600, 400, 1);
-
-    if (MenuScreen.themeType == 0) {
-        myStr = AnimalList.animals[index];
-    } else if (MenuScreen.themeType == 1) {
-        myStr = FoodList.food[index];
-    } else if (MenuScreen.themeType == 2) {
-        myStr = CountriesList.countries[index];
-    }
-
-    char[] charArray = myStr.toCharArray();
-    for (int i = 0; i < charArray.length && i < 11; i++) {
-        switch (i) {
-            case 0: firstLetter = charArray[i]; break;
-            case 1: secondLetter = charArray[i]; break;
-            case 2: thirdLetter = charArray[i]; break;
-            case 3: fourthLetter = charArray[i]; break;
-            case 4: fifthLetter = charArray[i]; break;
-            case 5: sixthLetter = charArray[i]; break;
-            case 6: seventhLetter = charArray[i]; break;
-            case 7: eighthLetter = charArray[i]; break;
-            case 8: ninthLetter = charArray[i]; break;
-            case 9: tenthLetter = charArray[i]; break;
-            case 10: eleventhLetter = charArray[i]; break;
-        }
-    }
-    Label[] labels = {letterOne, letterTwo, letterThree, letterFour, letterFive,letterSix, letterSeven, letterEight, letterNine, letterTen, letterEleven};
-        for (int i = 0; i < myStr.length(); i++) {
-            addObject(labels[i], 50 + i * 50, 200); 
-        }
+        super(600, 400, 1);
         addObject(new Button(this::inputMethod, "CycleButton.png",114, 56), 300, 275);
+
+        if (MenuScreen.themeType == 0) {
+            myStr = AnimalList.animals[index];
+        } else if (MenuScreen.themeType == 1) {
+            myStr = FoodList.food[index];
+        } else if (MenuScreen.themeType == 2) {
+            myStr = CountriesList.countries[index];
+        }
+
+        char[] charArray = myStr.toCharArray();
+        for (int i = 0; i < charArray.length && i < 11; i++) {
+            switch (i) {
+                case 0: firstLetter = charArray[i]; break;
+                case 1: secondLetter = charArray[i]; break;
+                case 2: thirdLetter = charArray[i]; break;
+                case 3: fourthLetter = charArray[i]; break;
+                case 4: fifthLetter = charArray[i]; break;
+                case 5: sixthLetter = charArray[i]; break;
+                case 6: seventhLetter = charArray[i]; break;
+                case 7: eighthLetter = charArray[i]; break;
+                case 8: ninthLetter = charArray[i]; break;
+                case 9: tenthLetter = charArray[i]; break;
+                case 10: eleventhLetter = charArray[i]; break;
+            }
+        }
+        Label[] labels = {letterOne, letterTwo, letterThree, letterFour, letterFive,letterSix, letterSeven, letterEight, letterNine, letterTen, letterEleven};
+            for (int i = 0; i < myStr.length(); i++) {
+                addObject(labels[i], 50 + i * 50, 200); 
+            }
+            
 }
 
     public void inputMethod() {
