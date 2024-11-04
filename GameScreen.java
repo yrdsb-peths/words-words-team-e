@@ -25,9 +25,8 @@ public class GameScreen extends World {
     Label letterEleven = null;
     int letter=0;
     public int index = Greenfoot.getRandomNumber(74);
-    public GameScreen() {
+    public GameScreen(World menuScreen) {
         super(600, 400, 1);
-    
 
         if (MenuScreen.themeType==0){
             myStr=AnimalList.animals[index];
