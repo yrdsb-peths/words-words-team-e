@@ -2,6 +2,7 @@ import greenfoot.*;
 public class GameScreen extends World {
     String myStr;
     int revealedCount = 0;
+    int wrongLetterCount=0;
     char firstLetter;
     char secondLetter;
     char thirdLetter;
@@ -53,19 +54,10 @@ public class GameScreen extends World {
             case 10: eleventhLetter = charArray[i]; break;
         }
     }
-
-    addObject(letterOne, 150, 200);
-    addObject(letterTwo, 200, 200);
-    addObject(letterThree, 250, 200);
-    addObject(letterFour, 300, 200);
-    addObject(letterFive, 350, 200);
-    addObject(letterSix, 400, 200);
-    addObject(letterSeven, 450, 200);
-    addObject(letterEight, 500, 200);
-    addObject(letterNine, 550, 200);
-    addObject(letterTen, 600, 200);
-    addObject(letterEleven, 650, 200);
-    addObject(new Button(this::inputMethod, "StartButtonIdle.png", 114, 56), 300, 350);
+    Label[] labels = {letterOne, letterTwo, letterThree, letterFour, letterFive,letterSix, letterSeven, letterEight, letterNine, letterTen, letterEleven};
+        for (int i = 0; i < myStr.length(); i++) {
+            addObject(labels[i], 50 + i * 50, 200); 
+        }
 }
 
     public void inputMethod() {
@@ -76,7 +68,6 @@ public class GameScreen extends World {
 
         String input = Greenfoot.ask("Input");
         if (input == null || input.isEmpty()) {
-            System.out.println("Input is null or empty");
             return;
         }
 
@@ -98,6 +89,7 @@ public class GameScreen extends World {
                 checkGameEnd();
             } else {
                 System.out.println("No match found for: " + answer);
+                wrongLetterCount++;
             }
         } else {
             System.out.println("Input length is not 1: " + input.length());
@@ -126,6 +118,9 @@ public class GameScreen extends World {
             
             Greenfoot.stop(); 
             
+        }else if(wrongLetterCount==5){
+            System.out.println("Game Over");
+            Greenfoot.stop();
         }
     }
 
