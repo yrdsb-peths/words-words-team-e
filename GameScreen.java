@@ -58,6 +58,7 @@ public class GameScreen extends World {
         for (int i = 0; i < myStr.length(); i++) {
             addObject(labels[i], 50 + i * 50, 200); 
         }
+        addObject(new Button(this::inputMethod, "CycleButton.png",114, 56), 300, 275);
 }
 
     public void inputMethod() {
