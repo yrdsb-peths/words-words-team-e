@@ -67,52 +67,53 @@ public class GameScreen extends World {
     addObject(new Button(this::inputMethod, "StartButtonIdle.png", 114, 56), 300, 350);
 }
 
-public void inputMethod() {
-    char[] charArray = { firstLetter, secondLetter, thirdLetter, fourthLetter, fifthLetter, 
-                         sixthLetter, seventhLetter, eighthLetter, ninthLetter, tenthLetter, 
-                         eleventhLetter };
+    public void inputMethod() {
+        char[] charArray = { firstLetter, secondLetter, thirdLetter, fourthLetter, fifthLetter, 
+                            sixthLetter, seventhLetter, eighthLetter, ninthLetter, tenthLetter, 
+                            eleventhLetter };
 
-    String input = Greenfoot.ask("Input");
-    if (input == null || input.isEmpty()) {
-        System.out.println("Input is null or empty");
-        return;
-    }
+        String input = Greenfoot.ask("Input");
+        if (input == null || input.isEmpty()) {
+            System.out.println("Input is null or empty");
+            return;
+        }
 
-    if (input.length() == 1) {
-        char answer = Character.toLowerCase(input.charAt(0));
-        System.out.println("User input: " + answer);
+        if (input.length() == 1) {
+            char answer = Character.toLowerCase(input.charAt(0));
+            System.out.println("User input: " + answer);
 
-        boolean found = false;
-        for (int i = 0; i < charArray.length; i++) {
-            if (answer == Character.toLowerCase(charArray[i])) {
-                System.out.println("Match found at index: " + i);
-                revealLetter(i, charArray[i]);
-                found = true;
-                break;
+            boolean found = false;
+            for (int i = 0; i < charArray.length; i++) {
+                if (answer == Character.toLowerCase(charArray[i])) {
+                    System.out.println("Match found at index: " + i);
+                    revealLetter(i, charArray[i]);
+                    found = true;
+                    break;
+                }
             }
-        }
-        if (!found) {
-            System.out.println("No match found for: " + answer);
-        }
-    } else {
-        System.out.println("Input length is not 1: " + input.length(
+            if (!found) {
+                System.out.println("No match found for: " + answer);
+            }
+        } else {
+            System.out.println("Input length is not 1: " + input.length());
 
-
-public void revealLetter(int index, char letter) {
-    String letterStr = Character.toString(letter); 
-    switch (index) {
-        case 0: letterOne.setValue(letterStr); break;
-        case 1: letterTwo.setValue(letterStr); break;
-        case 2: letterThree.setValue(letterStr); break;
-        case 3: letterFour.setValue(letterStr); break;
-        case 4: letterFive.setValue(letterStr); break;
-        case 5: letterSix.setValue(letterStr); break;
-        case 6: letterSeven.setValue(letterStr); break;
-        case 7: letterEight.setValue(letterStr); break;
-        case 8: letterNine.setValue(letterStr); break;
-        case 9: letterTen.setValue(letterStr); break;
-        case 10: letterEleven.setValue(letterStr); break;
+        }
     }
-}
+    public void revealLetter(int index, char letter) {
+        String letterStr = Character.toString(letter); 
+        switch (index) {
+            case 0: letterOne.setValue(letterStr); break;
+            case 1: letterTwo.setValue(letterStr); break;
+            case 2: letterThree.setValue(letterStr); break;
+            case 3: letterFour.setValue(letterStr); break;
+            case 4: letterFive.setValue(letterStr); break;
+            case 5: letterSix.setValue(letterStr); break;
+            case 6: letterSeven.setValue(letterStr); break;
+            case 7: letterEight.setValue(letterStr); break;
+            case 8: letterNine.setValue(letterStr); break;
+            case 9: letterTen.setValue(letterStr); break;
+            case 10: letterEleven.setValue(letterStr); break;
+        }
+    }
 
 }
