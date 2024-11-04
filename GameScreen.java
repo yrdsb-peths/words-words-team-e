@@ -28,29 +28,123 @@ public class GameScreen extends World {
     public GameScreen() {
         super(600, 400, 1);
 
-        if (MenuScreen.themeType == 0) {
-            myStr = AnimalList.animals[index];
-        } else if (MenuScreen.themeType == 1) {
-            myStr = FoodList.food[index];
-        } else if (MenuScreen.themeType == 2) {
-            myStr = CountriesList.countries[index];
-        }
-    
-        char[] charArray = myStr.toCharArray();
-        for (int i = 0; i < charArray.length; i++) {
-            switch (i) {
-                case 0: firstLetter = charArray[i]; break;
-                case 1: secondLetter = charArray[i]; break;
-                case 2: thirdLetter = charArray[i]; break;
-                case 3: fourthLetter = charArray[i]; break;
-                case 4: fifthLetter = charArray[i]; break;
-                case 5: sixthLetter = charArray[i]; break;
-                case 6: seventhLetter = charArray[i]; break;
-                case 7: eighthLetter = charArray[i]; break;
-                case 8: ninthLetter = charArray[i]; break;
-                case 9: tenthLetter = charArray[i]; break;
-                case 10: eleventhLetter = charArray[i]; break;
+        if (MenuScreen.themeType==0){
+            myStr=AnimalList.animals[index];
+            char[] charArray = myStr.toCharArray();
+            for (char s : charArray) {
+                if(letter==0){
+                    firstLetter = s;
+                }else if(letter==1){
+                    secondLetter = s;
+                }else if(letter==2){
+                    thirdLetter = s;
+                }
+                else if(letter==3){
+                    fourthLetter = s;
+                }
+                else if(letter==4){
+                    fifthLetter = s;
+                }
+                else if(letter==5){
+                    sixthLetter = s;
+                }
+                else if(letter==6){
+                    seventhLetter = s;
+                }
+                else if(letter==7){
+                    eighthLetter = s;
+                }
+                else if(letter==8){
+                    ninthLetter = s;
+                }
+                else if(letter==9){
+                    tenthLetter = s;
+                }
+                else if(letter==10){
+                    eleventhLetter = s;
+                }
+                letter++;
+            
             }
+        }
+        else if(MenuScreen.themeType==1) {
+            myStr=FoodList.food[index];
+            char[] charArray = myStr.toCharArray();
+            for (char s : charArray) {
+                if(letter==0){
+                    firstLetter = s;
+                }else if(letter==1){
+                    secondLetter = s;
+                }else if(letter==2){
+                    thirdLetter = s;
+                }
+                else if(letter==3){
+                    fourthLetter = s;
+                }
+                else if(letter==4){
+                    fifthLetter = s;
+                }
+                else if(letter==5){
+                    sixthLetter = s;
+                }
+                else if(letter==6){
+                    seventhLetter = s;
+                }
+                else if(letter==7){
+                    eighthLetter = s;
+                }
+                else if(letter==8){
+                    ninthLetter = s;
+                }
+                else if(letter==9){
+                    tenthLetter = s;
+                }
+                else if(letter==10){
+                    eleventhLetter = s;
+                }
+                letter++;
+            
+            }
+        }
+
+        else if(MenuScreen.themeType==2)
+        {
+            myStr=CountriesList.countries[index];
+            char[] charArray = myStr.toCharArray();
+            for (char s : charArray) {
+                if(letter==0){
+                    firstLetter = s;
+                }else if(letter==1){
+                    secondLetter = s;
+                }else if(letter==2){
+                    thirdLetter = s;
+                }
+                else if(letter==3){
+                    fourthLetter = s;
+                }
+                else if(letter==4){
+                    fifthLetter = s;
+                }
+                else if(letter==5){
+                    sixthLetter = s;
+                }
+                else if(letter==6){
+                    seventhLetter = s;
+                }
+                else if(letter==7){
+                    eighthLetter = s;
+                }
+                else if(letter==8){
+                    ninthLetter = s;
+                }
+                else if(letter==9){
+                    tenthLetter = s;
+                }
+                else if(letter==10){
+                    eleventhLetter = s;
+                }
+                letter++;
+            
         }
         addObject(letterOne, 150, 200);
         addObject(letterTwo, 200, 200);
@@ -64,7 +158,7 @@ public class GameScreen extends World {
         addObject(letterTen, 600, 200);
         addObject(letterEleven, 650, 200);
         addObject(new Button(this::inputMethod, "StartButtonIdle.png",114, 56), 300, 350);
-
+        }
     }
     public void inputMethod() {
         char[] charArray = { firstLetter, secondLetter, thirdLetter, fourthLetter, fifthLetter, 
