@@ -159,7 +159,7 @@ public class GameScreen extends World
             Greenfoot.setWorld(new EndScreen(correctGuessesCount, wrongLetterCount,totalGuesses,win)); 
             
         }
-        else if(wrongLetterCount>=5)
+        else if(wrongLetterCount>=6)
         {
             Greenfoot.setWorld(new EndScreen(revealedCount, wrongLetterCount,totalGuesses,win)); 
         }
