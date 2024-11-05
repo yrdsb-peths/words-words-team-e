@@ -6,6 +6,7 @@ public class GameScreen extends World {
     Set<Character> guessedLetters = new HashSet<>();
     String myStr;
     int revealedCount = 0;
+    int correctGuessesCount=0;
     int wrongLetterCount=0;
     int totalGuesses=0;
     boolean win=false;
@@ -95,17 +96,19 @@ public class GameScreen extends World {
                 if (answer == Character.toLowerCase(charArray[i])) {
                     System.out.println("Match found at index: " + i);
                     revealLetter(i, charArray[i]);
+                    revealedCount++;
                     found = true;
                     
                 }
             }
 
             if (found) {
-                revealedCount++;
+                correctGuessesCount++;
                 checkGameEnd();
             } else {
                 System.out.println("No match found for: " + answer);
                 wrongLetterCount++;
+                checkGameEnd();
             }
         } else {
             System.out.println("Input length is not 1: " + input.length());
@@ -131,9 +134,9 @@ public class GameScreen extends World {
     private void checkGameEnd() {
         if (revealedCount == myStr.length()) {
             win=true;
-            Greenfoot.setWorld(new EndScreen(revealedCount, wrongLetterCount,totalGuesses,win)); 
+            Greenfoot.setWorld(new EndScreen(correctGuessesCount, wrongLetterCount,totalGuesses,win)); 
             
-        }else if(wrongLetterCount==5){
+        }else if(wrongLetterCount>=5){
             Greenfoot.setWorld(new EndScreen(revealedCount, wrongLetterCount,totalGuesses,win)); 
         }
     }
