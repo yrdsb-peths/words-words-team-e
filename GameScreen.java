@@ -4,6 +4,10 @@ import java.util.Set;
 import greenfoot.*;
 public class GameScreen extends World 
 {
+    private Queues<GreenfootImage> hangManQueue;
+    private GreenfootImage currentHangMan;
+    private Label hangManLabel;
+    public static int hangManType=0;
     Set<Character> guessedLetters = new HashSet<>();
     String myStr;
     int revealedCount = 0;
@@ -39,7 +43,16 @@ public class GameScreen extends World
     public GameScreen() 
     {
         super(600, 400, 1);
+        hangManType=0;
+        hangManQueue = new Queues<>();
+        loadHangMan();
+        currentHangMan = hangManQueue.peek();
+        hangManLabel = new Label(currentHangMan, 100, 100);
+        hangManLabel.setImage(currentHangMan);
+        addObject(hangManLabel, 50, 50);
+        
         addObject(new Button(this::inputMethod, "GuessButton.png",114, 56), 300, 275);
+
 
         if (MenuScreen.themeType == 0) {
             myStr = AnimalList.animals[index];
@@ -52,7 +65,8 @@ public class GameScreen extends World
         {
             myStr = CountriesList.countries[index];
         }
-
+        
+        
         char[] charArray = myStr.toCharArray();
         for (int i = 0; i < charArray.length && i < 11; i++) 
         {
@@ -75,8 +89,8 @@ public class GameScreen extends World
             {
                 addObject(labels[i], 50 + i * 50, 200); 
             }
-            
-}
+
+    }
 
     public void inputMethod() 
     {
@@ -124,6 +138,7 @@ public class GameScreen extends World
             {
                 System.out.println("No match found for: " + answer);
                 wrongLetterCount++;
+                cycleHangMan();
                 checkGameEnd();
             }
         } 
@@ -164,5 +179,31 @@ public class GameScreen extends World
             Greenfoot.setWorld(new EndScreen(revealedCount, wrongLetterCount,totalGuesses,win)); 
         }
     }
+    private void loadHangMan() 
+    {
+        hangManQueue.enqueue(new GreenfootImage("Hangman0.png"));
+        hangManQueue.enqueue(new GreenfootImage("Hangman1.png"));
+        hangManQueue.enqueue(new GreenfootImage("Hangman2.png"));
+        hangManQueue.enqueue(new GreenfootImage("Hangman3.png"));
+        hangManQueue.enqueue(new GreenfootImage("Hangman4.png"));
+        hangManQueue.enqueue(new GreenfootImage("Hangman5.png"));
+        hangManQueue.enqueue(new GreenfootImage("Hangman6.png"));
+    }
+    
+    public void cycleHangMan() 
+    {
+        GreenfootImage firstHangMan = hangManQueue.dequeue();
+        hangManQueue.enqueue(firstHangMan);
+        currentHangMan = hangManQueue.peek();
+        hangManLabel.setImage(currentHangMan);
+        if(hangManType<2){
+            hangManType++;
+        }
+        else if(hangManType==2)
+        {
+            hangManType=0;
+        }
+    }
+    
 
 }
