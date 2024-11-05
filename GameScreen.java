@@ -39,7 +39,7 @@ public class GameScreen extends World
     public GameScreen() 
     {
         super(600, 400, 1);
-        addObject(new Button(this::inputMethod, "CycleButton.png",114, 56), 300, 275);
+        addObject(new Button(this::inputMethod, "AnswerButton.png",114, 56), 300, 275);
 
         if (MenuScreen.themeType == 0) {
             myStr = AnimalList.animals[index];
