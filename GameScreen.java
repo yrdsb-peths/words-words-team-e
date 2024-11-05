@@ -3,6 +3,7 @@ import java.util.Set;
 
 import greenfoot.*;
 public class GameScreen extends World {
+    Set<Character> guessedLetters = new HashSet<>();
     String myStr;
     int revealedCount = 0;
     int wrongLetterCount=0;
@@ -72,7 +73,6 @@ public class GameScreen extends World {
         char[] charArray = { firstLetter, secondLetter, thirdLetter, fourthLetter, fifthLetter, 
                             sixthLetter, seventhLetter, eighthLetter, ninthLetter, tenthLetter, 
                             eleventhLetter };
-        Set<Character> guessedLetters = new HashSet<>();
         System.out.println(charArray);
 
         String input = Greenfoot.ask("Input");
@@ -96,11 +96,12 @@ public class GameScreen extends World {
                     System.out.println("Match found at index: " + i);
                     revealLetter(i, charArray[i]);
                     found = true;
-                    revealedCount++;
+                    
                 }
             }
 
             if (found) {
+                revealedCount++;
                 checkGameEnd();
             } else {
                 System.out.println("No match found for: " + answer);
