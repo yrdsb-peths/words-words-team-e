@@ -37,12 +37,14 @@ public class GameScreen extends World
     public int index = Greenfoot.getRandomNumber(74);
     GreenfootSound winSound = new GreenfootSound("winMusic.mp3");
     GreenfootSound loseSound = new GreenfootSound("loseMusic.mp3");
+    GreenfootSound backgroudMusic = new GreenfootSound("backgroundMusic.mp3");
     
     public GameScreen() 
     {
         super(600, 400, 1);
         addObject(new Button(this::inputMethod, "AnswerButton.png",114, 56), 300, 275);
-
+        backgroudMusic.playLoop();
+        
         if (MenuScreen.themeType == 0) {
             myStr = AnimalList.animals[index];
         } 
@@ -155,6 +157,7 @@ public class GameScreen extends World
     }
     private void checkGameEnd() 
     {
+        backgroudMusic.stop();
         if (revealedCount == myStr.length()) 
         {
             win=true;
