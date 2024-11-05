@@ -10,8 +10,13 @@ public class EndScreen extends World{
         endStats.put("Right", right);
         endStats.put("Wrong", wrong);
         endStats.put("Total", total);
-        for (Map.Entry<String, Integer> entry : endStats.entrySet()) {
-            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+        int y = 100;
+
+        for (Map.Entry<String, Integer> entry : endStats.entrySet())
+         {
+            Label scoreLabel = new Label(entry.getKey() + ": " + entry.getValue(), 24);
+            addObject(scoreLabel, 300, y);
+            y += 50;
         }
     }
 }
