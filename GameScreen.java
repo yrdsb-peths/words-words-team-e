@@ -3,6 +3,7 @@ public class GameScreen extends World {
     String myStr;
     int revealedCount = 0;
     int wrongLetterCount=0;
+    int totalGuesses=0;
     char firstLetter;
     char secondLetter;
     char thirdLetter;
@@ -27,7 +28,7 @@ public class GameScreen extends World {
     Label letterEleven = new Label("_",50);
     int letter=0;
     public int index = Greenfoot.getRandomNumber(74);
-
+    
     public GameScreen() {
         super(600, 400, 1);
         addObject(new Button(this::inputMethod, "CycleButton.png",114, 56), 300, 275);
@@ -70,6 +71,7 @@ public class GameScreen extends World {
         System.out.println(charArray);
 
         String input = Greenfoot.ask("Input");
+        totalGuesses++;
         if (input == null || input.isEmpty()) {
             return;
         }
@@ -119,7 +121,7 @@ public class GameScreen extends World {
         if (revealedCount == myStr.length()) {
             System.out.println("Congratulations! You've found the word: " + myStr);
             
-            Greenfoot.stop(); 
+            Greenfoot.setWorld(new EndScreen(revealedCount, wrongLetterCount,totalGuesses)); 
             
         }else if(wrongLetterCount==5){
             System.out.println("Game Over");
