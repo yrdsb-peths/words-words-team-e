@@ -157,9 +157,10 @@ public class GameScreen extends World
     }
     private void checkGameEnd() 
     {
-        backgroudMusic.stop();
+        
         if (revealedCount == myStr.length()) 
         {
+            backgroudMusic.stop();
             win=true;
             winSound.play();
             Greenfoot.setWorld(new EndScreen(correctGuessesCount, wrongLetterCount,totalGuesses,win)); 
@@ -167,6 +168,7 @@ public class GameScreen extends World
         }
         else if(wrongLetterCount>=5)
         {
+            backgroudMusic.stop();
             loseSound.play();
             Greenfoot.setWorld(new EndScreen(revealedCount, wrongLetterCount,totalGuesses,win)); 
         }
