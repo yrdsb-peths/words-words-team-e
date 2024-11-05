@@ -35,8 +35,8 @@ public class GameScreen extends World
     Label letterEleven = new Label("_",50);
     int letter=0;
     public int index = Greenfoot.getRandomNumber(74);
-    GreenfootSound winSound = new GreenfootSound("winMusic.wav");
-    GreenfootSound loseSound = new GreenfootSound("loseMusic.wav");
+    GreenfootSound winSound = new GreenfootSound("winMusic.mp3");
+    GreenfootSound loseSound = new GreenfootSound("loseMusic.mp3");
     
     public GameScreen() 
     {
