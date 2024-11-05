@@ -43,7 +43,6 @@ public class GameScreen extends World
     public GameScreen() 
     {
         super(600, 400, 1);
-        addObject(new Button(this::inputMethod, "AnswerButton.png",114, 56), 300, 275);
         hangManType=0;
         hangManQueue = new Queues<>();
         loadHangMan();
@@ -52,6 +51,9 @@ public class GameScreen extends World
         hangManLabel.setImage(currentHangMan);
         addObject(hangManLabel, 50, 50);
         
+        addObject(new Button(this::inputMethod, "GuessButton.png",114, 56), 300, 275);
+
+
         if (MenuScreen.themeType == 0) {
             myStr = AnimalList.animals[index];
         } 
@@ -172,7 +174,7 @@ public class GameScreen extends World
             Greenfoot.setWorld(new EndScreen(correctGuessesCount, wrongLetterCount,totalGuesses,win)); 
             
         }
-        else if(wrongLetterCount>=5)
+        else if(wrongLetterCount>=6)
         {
             Greenfoot.setWorld(new EndScreen(revealedCount, wrongLetterCount,totalGuesses,win)); 
         }
