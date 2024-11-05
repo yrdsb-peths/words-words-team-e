@@ -39,10 +39,15 @@ public class GameScreen extends World
     Label letterEleven = new Label("_",50);
     int letter=0;
     public int index = Greenfoot.getRandomNumber(74);
+    GreenfootSound winSound = new GreenfootSound("winMusic.mp3");
+    GreenfootSound loseSound = new GreenfootSound("loseMusic.mp3");
+    GreenfootSound backgroudMusic = new GreenfootSound("backgroundMusic.mp3");
     
     public GameScreen() 
     {
         super(600, 400, 1);
+      
+        backgroudMusic.playLoop();
         hangManType=0;
         hangManQueue = new Queues<>();
         loadHangMan();
@@ -168,14 +173,19 @@ public class GameScreen extends World
     }
     private void checkGameEnd() 
     {
+        
         if (revealedCount == myStr.length()) 
         {
+            backgroudMusic.stop();
             win=true;
+            winSound.play();
             Greenfoot.setWorld(new EndScreen(correctGuessesCount, wrongLetterCount,totalGuesses,win)); 
             
         }
         else if(wrongLetterCount>=6)
         {
+            backgroudMusic.stop();
+            loseSound.play();
             Greenfoot.setWorld(new EndScreen(revealedCount, wrongLetterCount,totalGuesses,win)); 
         }
     }
