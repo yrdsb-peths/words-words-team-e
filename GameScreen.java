@@ -35,6 +35,8 @@ public class GameScreen extends World
     Label letterEleven = new Label("_",50);
     int letter=0;
     public int index = Greenfoot.getRandomNumber(74);
+    GreenfootSound winSound = new GreenfootSound("winMusic.wav");
+    GreenfootSound loseSound = new GreenfootSound("loseMusic.wav");
     
     public GameScreen() 
     {
@@ -156,11 +158,13 @@ public class GameScreen extends World
         if (revealedCount == myStr.length()) 
         {
             win=true;
+            winSound.play();
             Greenfoot.setWorld(new EndScreen(correctGuessesCount, wrongLetterCount,totalGuesses,win)); 
             
         }
         else if(wrongLetterCount>=5)
         {
+            loseSound.play();
             Greenfoot.setWorld(new EndScreen(revealedCount, wrongLetterCount,totalGuesses,win)); 
         }
     }
