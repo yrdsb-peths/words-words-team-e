@@ -4,12 +4,16 @@ import java.util.Map;
 import greenfoot.*;
 public class EndScreen extends World{
     
-    public EndScreen(int right, int wrong, int total, boolean win){
+    public EndScreen(int right, int wrong, int total, boolean win)
+    {
         super(600,400,1);
         Label winText;
-        if(win==true){
+        if(win==true)
+        {
             winText=new Label("You win!",100);
-        }else{
+        }
+        else
+        {
             winText=new Label("Game Over",100);
         }
         addObject(winText, 300, 200);

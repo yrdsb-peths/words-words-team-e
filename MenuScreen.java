@@ -6,6 +6,7 @@ public class MenuScreen extends World
     private GreenfootImage currentTheme;
     private Label themeLabel;
     public static int themeType=0;
+    
     public MenuScreen()
     {
         super(600,400,1);
