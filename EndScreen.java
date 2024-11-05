@@ -17,7 +17,7 @@ public class EndScreen extends World{
         endStats.put("Correct Guesses", right);
         endStats.put("Wrong Guesses", wrong);
         endStats.put("Total Guesses", total);
-        int y = 400;
+        int y = 250;
 
         for (Map.Entry<String, Integer> entry : endStats.entrySet())
          {

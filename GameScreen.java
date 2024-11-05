@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 import greenfoot.*;
 public class GameScreen extends World {
     String myStr;
@@ -69,6 +72,7 @@ public class GameScreen extends World {
         char[] charArray = { firstLetter, secondLetter, thirdLetter, fourthLetter, fifthLetter, 
                             sixthLetter, seventhLetter, eighthLetter, ninthLetter, tenthLetter, 
                             eleventhLetter };
+        Set<Character> guessedLetters = new HashSet<>();
         System.out.println(charArray);
 
         String input = Greenfoot.ask("Input");
@@ -79,7 +83,12 @@ public class GameScreen extends World {
 
         if (input.length() == 1) {
             char answer = Character.toLowerCase(input.charAt(0));
+            if (guessedLetters.contains(answer)) {
+                System.out.println("Letter '" + answer + "' was already guessed.");
+                return;
+            }
             System.out.println("User input: " + answer);
+            guessedLetters.add(answer);
             boolean found = false;
 
             for (int i = 0; i < charArray.length; i++) {
