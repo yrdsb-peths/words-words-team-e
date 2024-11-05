@@ -4,6 +4,7 @@ public class GameScreen extends World {
     int revealedCount = 0;
     int wrongLetterCount=0;
     int totalGuesses=0;
+    boolean win=false;
     char firstLetter;
     char secondLetter;
     char thirdLetter;
@@ -119,13 +120,11 @@ public class GameScreen extends World {
     }
     private void checkGameEnd() {
         if (revealedCount == myStr.length()) {
-            System.out.println("Congratulations! You've found the word: " + myStr);
-            
-            Greenfoot.setWorld(new EndScreen(revealedCount, wrongLetterCount,totalGuesses)); 
+            win=true;
+            Greenfoot.setWorld(new EndScreen(revealedCount, wrongLetterCount,totalGuesses,win)); 
             
         }else if(wrongLetterCount==5){
-            System.out.println("Game Over");
-            Greenfoot.stop();
+            Greenfoot.setWorld(new EndScreen(revealedCount, wrongLetterCount,totalGuesses,win)); 
         }
     }
 
