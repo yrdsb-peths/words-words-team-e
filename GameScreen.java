@@ -46,7 +46,7 @@ public class GameScreen extends World
     public GameScreen() 
     {
         super(600, 400, 1);
-        
+        setBackground("Brown copy.png");
         backgroudMusic.playLoop();
         hangManType=0;
         hangManQueue = new Queues<>();
