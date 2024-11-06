@@ -4,6 +4,9 @@ public class MenuScreen extends World
 {
     private Queues<GreenfootImage> themeQueue;
     private GreenfootImage currentTheme;
+    private GreenfootImage skullImage;
+    private GreenfootImage titleImage;
+    
     private Label themeLabel;
     public static int themeType=0;
     
@@ -17,12 +20,24 @@ public class MenuScreen extends World
         currentTheme = themeQueue.peek();
         themeLabel = new Label(currentTheme, 100, 100);
         themeLabel.setImage(currentTheme);
-        Label themeCycleName= new Label("Cycle Themes", 25);
-        addObject(themeLabel, 300, 200);
-        addObject(themeCycleName, 150, 250);
+        skullImage = new GreenfootImage("Skull.png");
+        skullImage.scale(100, 100); 
+        Label skull1 = new Label(skullImage, "", 0);
+        Label skull2 = new Label(skullImage, "", 0);
+        skull1.setImage(skullImage);
+        skull2.setImage(skullImage);
+
+        titleImage = new GreenfootImage("Title.png"); 
+        Label title = new Label(titleImage, "", 0);
+        title.setImage(titleImage);
+
+        addObject(themeLabel, 300, 250);
         addObject(new Button(this::goToGameScreen, "StartButtonIdle.png",114, 56), 300, 350);
         addObject(new Button(this::cycleTheme, "Theme.png",114, 56), 300, 275);
-        
+        addObject(skull1, 100, 250);
+        addObject(skull2, 500, 250);
+        addObject(title, 300, 100);
+
     }
     private void loadThemes() 
     {

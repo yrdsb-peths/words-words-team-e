@@ -7,6 +7,7 @@ public class GameScreen extends World
     private Queues<GreenfootImage> hangManQueue;
     private GreenfootImage currentHangMan;
     private Label hangManLabel;
+    private Label rightOrWrongText;
     public static int hangManType=0;
     Set<Character> guessedLetters = new HashSet<>();
     String myStr;
@@ -46,17 +47,19 @@ public class GameScreen extends World
     public GameScreen() 
     {
         super(600, 400, 1);
-      
+        setBackground("GameBackground.png");
         backgroudMusic.playLoop();
         hangManType=0;
         hangManQueue = new Queues<>();
         loadHangMan();
         currentHangMan = hangManQueue.peek();
-        hangManLabel = new Label(currentHangMan, 100, 100);
+        hangManLabel = new Label(currentHangMan, "",100);
         hangManLabel.setImage(currentHangMan);
-        addObject(hangManLabel, 50, 50);
-        
-        addObject(new Button(this::inputMethod, "GuessButton.png",114, 56), 300, 275);
+        currentHangMan.scale(100, 100); 
+        addObject(hangManLabel, 300, 135);
+        rightOrWrongText= new Label("", 25);
+        addObject(rightOrWrongText, 300,275);
+        addObject(new Button(this::inputMethod, "GuessButton.png",114, 56), 300, 350);
 
 
         if (MenuScreen.themeType == 0) {
@@ -115,7 +118,7 @@ public class GameScreen extends World
         {
             char answer = Character.toLowerCase(input.charAt(0));
             if (guessedLetters.contains(answer)) {
-                System.out.println("Letter '" + answer + "' was already guessed.");
+                rightOrWrongText.setValue("Letter already Guessed");
                 return;
             }
             System.out.println("User input: " + answer);
@@ -126,7 +129,7 @@ public class GameScreen extends World
             {
                 if (answer == Character.toLowerCase(charArray[i])) 
                 {
-                    System.out.println("Match found at index: " + i);
+                    rightOrWrongText.setValue("Correct!");
                     revealLetter(i, charArray[i]);
                     revealedCount++;
                     found = true;
@@ -141,7 +144,7 @@ public class GameScreen extends World
             } 
             else 
             {
-                System.out.println("No match found for: " + answer);
+                rightOrWrongText.setValue("Sorry try again!");
                 wrongLetterCount++;
                 cycleHangMan();
                 checkGameEnd();
@@ -149,7 +152,7 @@ public class GameScreen extends World
         } 
         else 
         {
-            System.out.println("Input length is not 1: " + input.length());
+            rightOrWrongText.setValue("Put a letter...");
         }
     }
 

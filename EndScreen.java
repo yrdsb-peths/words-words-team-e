@@ -7,21 +7,22 @@ public class EndScreen extends World{
     public EndScreen(int right, int wrong, int total, boolean win)
     {
         super(600,400,1);
-        Label winText;
+        setBackground("EndScreen.png");
+        Label endText;
         if(win==true)
         {
-            winText=new Label("You win!",100);
+            endText=new Label("You win!",50);
         }
         else
         {
-            winText=new Label("Game Over",100);
+            endText=new Label("Game Over",50);
         }
-        addObject(winText, 300, 200);
+        addObject(endText, 300, 150);
          Map<String, Integer> endStats = new HashMap<>();
         endStats.put("Correct Guesses", right);
         endStats.put("Wrong Guesses", wrong);
         endStats.put("Total Guesses", total);
-        int y = 250;
+        int y = 200;
 
         for (Map.Entry<String, Integer> entry : endStats.entrySet())
          {
