@@ -17,7 +17,9 @@ Used in MenuScreen and GameScreen to allow player input for when switching theme
 Was needed for any kind player input and simplified it to simply clicking rather than explaining which key does what.
 
 
+2D Arrays
 
+Used to randomly select a word from the chosen theme after the player has decided on what theme they want. This is best for this situation since there are 3 different string arrays meaning a 2D array would put them together and allow the words to be randomly chosen easily.
 
 
 
