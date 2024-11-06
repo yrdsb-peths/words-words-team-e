@@ -56,7 +56,7 @@ public class GameScreen extends World
         hangManLabel = new Label(currentHangMan, "",100);
         hangManLabel.setImage(currentHangMan);
         currentHangMan.scale(100, 100); 
-        addObject(hangManLabel, 300, 130);
+        addObject(hangManLabel, 300, 135);
         rightOrWrongText= new Label("", 25);
         addObject(rightOrWrongText, 300,275);
         addObject(new Button(this::inputMethod, "GuessButton.png",114, 56), 300, 350);
