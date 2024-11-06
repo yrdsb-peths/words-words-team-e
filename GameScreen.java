@@ -46,13 +46,13 @@ public class GameScreen extends World
     public GameScreen() 
     {
         super(600, 400, 1);
-      
+        setBackground("Brown copy.png");
         backgroudMusic.playLoop();
         hangManType=0;
         hangManQueue = new Queues<>();
         loadHangMan();
         currentHangMan = hangManQueue.peek();
-        hangManLabel = new Label(currentHangMan, 100, 100);
+        hangManLabel = new Label(currentHangMan, 200, 200);
         hangManLabel.setImage(currentHangMan);
         addObject(hangManLabel, 50, 50);
         
