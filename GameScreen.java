@@ -52,7 +52,7 @@ public class GameScreen extends World
         hangManQueue = new Queues<>();
         loadHangMan();
         currentHangMan = hangManQueue.peek();
-        hangManLabel = new Label(currentHangMan, 200, 200);
+        hangManLabel = new Label(currentHangMan, 100, 200);
         hangManLabel.setImage(currentHangMan);
         addObject(hangManLabel, 50, 50);
         
