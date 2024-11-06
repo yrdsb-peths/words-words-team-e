@@ -16,11 +16,11 @@ public class MenuScreen extends World
         themeType=0;
         themeQueue = new Queues<>();
         loadThemes();
-        setBackground("Brown copy.png");
+        setBackground("Brown copy.png"); // sets background
         currentTheme = themeQueue.peek();
         themeLabel = new Label(currentTheme, 100, 100);
         themeLabel.setImage(currentTheme);
-        skullImage = new GreenfootImage("Skull.png");
+        skullImage = new GreenfootImage("Skull.png");  //adding images to the MenuScreen 
         skullImage.scale(100, 100); 
         Label skull1 = new Label(skullImage, "", 0);
         Label skull2 = new Label(skullImage, "", 0);
@@ -37,10 +37,10 @@ public class MenuScreen extends World
         addObject(skull1, 100, 250);
         addObject(skull2, 500, 250);
         addObject(title, 300, 100);
-
     }
     private void loadThemes() 
     {
+        //putting all themes in a queue
         themeQueue.enqueue(new GreenfootImage("Animal.png"));
         themeQueue.enqueue(new GreenfootImage("Food.png"));
         themeQueue.enqueue(new GreenfootImage("Countries.png"));
@@ -48,6 +48,7 @@ public class MenuScreen extends World
 
     public void cycleTheme() 
     {
+        //cycling system for the themes
         GreenfootImage firstTheme = themeQueue.dequeue();
         themeQueue.enqueue(firstTheme);
         currentTheme = themeQueue.peek();
@@ -62,6 +63,7 @@ public class MenuScreen extends World
     }
     public void goToGameScreen() 
     {
+        //sets to the game screen when a button is pressed
         Greenfoot.setWorld(new GameScreen()); 
     }
 }

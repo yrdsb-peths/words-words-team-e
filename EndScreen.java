@@ -8,7 +8,8 @@ public class EndScreen extends World{
     {
         super(600,400,1);
         setBackground("EndScreen.png");
-        Label endText;
+        Label endText;// creating a label for the win text
+        //checks for a win
         if(win==true)
         {
             endText=new Label("You win!",50);
@@ -18,12 +19,13 @@ public class EndScreen extends World{
             endText=new Label("Game Over",50);
         }
         addObject(endText, 300, 150);
+        //displays the post-game stats
          Map<String, Integer> endStats = new HashMap<>();
         endStats.put("Correct Guesses", right);
         endStats.put("Wrong Guesses", wrong);
         endStats.put("Total Guesses", total);
         int y = 200;
-
+        // actually adding the post-game stats to the screen
         for (Map.Entry<String, Integer> entry : endStats.entrySet())
          {
             Label scoreLabel = new Label(entry.getKey() + ": " + entry.getValue(), 24);

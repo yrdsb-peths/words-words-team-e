@@ -87,6 +87,7 @@ public class AnimalList extends World
         "wolf",
         "worm",
     };
+    // list filled with all possible answers under the animal theme
     public AnimalList()
     {
         super(600,400,1);
