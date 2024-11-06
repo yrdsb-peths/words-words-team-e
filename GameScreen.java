@@ -214,7 +214,7 @@ public class GameScreen extends World
     }
     public void RandomStringPicker(int theme) {
         //randomizer
-        String[][] allArrays = {AnimalList.animals, CountriesList.countries, FoodList.food};
+        String[][] allArrays = {AnimalList.animals, FoodList.food, CountriesList.countries};
         
         Random rand = new Random();      
         int randomCol = rand.nextInt(allArrays[theme].length);  
