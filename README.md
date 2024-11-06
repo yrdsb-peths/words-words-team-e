@@ -1,20 +1,24 @@
-# Set up Greenfoot for VSCode
+1. 
+Group Members:Jamie Wang, Nicolas Kulybanycz, Martin ma
+2.
+Queues 
+Used to cycle themes when the player wants a different theme for their words they want to guess found in MenuScreen Class. Used here since it was going through each one in the queue one by one and cycling themes was similar to cycling avatars in the Menu assignment
 
-[Mac]
-1. Open `Finder` and navigate to the Applications folder.
-2. Right-click on the Greenfoot app and select `Show Package Contents`.
-3. In the opened folder, go to `Contents -> Resources -> Java` and find the `greenfoot.jar` file.
-4. Copy this `greenfoot.jar` to the `/lib` Folder in this project.
 
-[Windows]
-1. Open `File Explorer` and navigate to `C:\Program Files\Greenfoot` and locate the `greenfoot.jar` file.
-2. Copy this `greenfoot.jar` to the `\lib` Folder in this project.
+Used in GameScreen class to cycle through the different hangman phases whenever the player gets a letter wrong
+Used here since the hangman phases were simply being cycled through similar to avatar code. Stacks or maps would not work as well since they are not meant to be cycled through like queues.
 
-<br>
-<br>
+Maps
+Used to generate the total amount of guesses, correct guesses, and wrong guesses at the end of the game when the player loses or wins. Found in EndScreen Class. Easier to call a from a map using set keys rather than using a queue and requires shorter code.
 
-# project.greenfoot
-Copy the `project.greenfoot.md` file and rename it to `project.greenfoot`
+Buttons
 
-# Learn Markdown Basics
-[Markdown basics](https://www.markdownguide.org/getting-started/)
+Used in MenuScreen and GameScreen to allow player input for when switching themes or when inputing a answer
+Was needed for any kind player input and simplified it to simply clicking rather than explaining which key does what.
+
+
+
+
+
+
+

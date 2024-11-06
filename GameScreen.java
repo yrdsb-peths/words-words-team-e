@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Set;
 
 import greenfoot.*;
@@ -62,17 +63,7 @@ public class GameScreen extends World
         addObject(new Button(this::inputMethod, "GuessButton.png",114, 56), 300, 350);
 
 
-        if (MenuScreen.themeType == 0) {
-            myStr = AnimalList.animals[index];
-        } 
-        else if (MenuScreen.themeType == 1) 
-        {
-            myStr = FoodList.food[index];
-        } 
-        else if (MenuScreen.themeType == 2) 
-        {
-            myStr = CountriesList.countries[index];
-        }
+        RandomStringPicker(MenuScreen.themeType);
         
         
         char[] charArray = myStr.toCharArray();
@@ -216,6 +207,15 @@ public class GameScreen extends World
             hangManType=0;
         }
     }
-    
+    public void RandomStringPicker(int theme) {
+        String[][] allArrays = {AnimalList.animals, CountriesList.countries, FoodList.food};
+        
+        Random rand = new Random();      
+        int randomCol = rand.nextInt(allArrays[theme].length);  
+
+
+        String randomString = allArrays[theme][randomCol];
+        myStr=randomString;
+    }
 
 }
