@@ -112,7 +112,6 @@ public class GameScreen extends World
                 rightOrWrongText.setValue("Letter already Guessed");
                 return;
             }
-            System.out.println("User input: " + answer);
             guessedLetters.add(answer);
             boolean found = false;
 
