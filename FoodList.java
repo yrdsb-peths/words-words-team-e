@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FoodList extends World
 {
+    // list filled with all possible answers under the food theme
     public static String[] food = 
     {
          "apple",

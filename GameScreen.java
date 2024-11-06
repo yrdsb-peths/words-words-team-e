@@ -7,17 +7,17 @@ public class GameScreen extends World
 {
     private Queues<GreenfootImage> hangManQueue;
     private GreenfootImage currentHangMan;
-    private Label hangManLabel;
+    private Label hangManLabel;  // all above used for hangman image
     private Label rightOrWrongText;
     public static int hangManType=0;
-    Set<Character> guessedLetters = new HashSet<>();
+    Set<Character> guessedLetters = new HashSet<>();// list for all guessed letters
     String myStr;
-    int revealedCount = 0;
+    int revealedCount = 0; 
     int correctGuessesCount=0;
     int wrongLetterCount=0;
     int totalGuesses=0;
     boolean win=false;
-    char firstLetter;
+    char firstLetter; 
     char secondLetter;
     char thirdLetter;
     char fourthLetter;
@@ -38,24 +38,24 @@ public class GameScreen extends World
     Label letterEight = new Label("_",50);
     Label letterNine = new Label("_",50);
     Label letterTen = new Label("_",50);
-    Label letterEleven = new Label("_",50);
-    int letter=0;
+    Label letterEleven = new Label("_",50); 
+    int letter=0; // all above used for the letter checking system
     public int index = Greenfoot.getRandomNumber(74);
     GreenfootSound winSound = new GreenfootSound("winMusic.mp3");
     GreenfootSound loseSound = new GreenfootSound("loseMusic.mp3");
     GreenfootSound backgroudMusic = new GreenfootSound("backgroundMusic.mp3");
-    
+    // sounds for gameplay, win and lose
     public GameScreen() 
     {
         super(600, 400, 1);
-        setBackground("GameBackground.png");
+        setBackground("GameBackground.png"); // changing background
         backgroudMusic.playLoop();
         hangManType=0;
         hangManQueue = new Queues<>();
         loadHangMan();
         currentHangMan = hangManQueue.peek();
         hangManLabel = new Label(currentHangMan, "",100);
-        hangManLabel.setImage(currentHangMan);
+        hangManLabel.setImage(currentHangMan); // hangman image queue instantiating
         currentHangMan.scale(100, 100); 
         addObject(hangManLabel, 300, 135);
         rightOrWrongText= new Label("", 25);
@@ -88,11 +88,12 @@ public class GameScreen extends World
             {
                 addObject(labels[i], 50 + i * 50, 200); 
             }
-
+        // letter checkers
     }
 
     public void inputMethod() 
     {
+        // all of this is used to ask the player for a letter to guess
         char[] charArray = { firstLetter, secondLetter, thirdLetter, fourthLetter, fifthLetter, 
                             sixthLetter, seventhLetter, eighthLetter, ninthLetter, tenthLetter, 
                             eleventhLetter };
@@ -148,6 +149,8 @@ public class GameScreen extends World
 
     public void revealLetter(int index, char letter) 
     {
+        //in the instance of a found letter it will reveal the
+        //letter on the board
         String letterStr = Character.toString(letter); 
         switch (index) 
         {
@@ -184,6 +187,7 @@ public class GameScreen extends World
     }
     private void loadHangMan() 
     {
+        //adding all hangman images to a queue
         hangManQueue.enqueue(new GreenfootImage("Hangman0.png"));
         hangManQueue.enqueue(new GreenfootImage("Hangman1.png"));
         hangManQueue.enqueue(new GreenfootImage("Hangman2.png"));
@@ -195,6 +199,7 @@ public class GameScreen extends World
     
     public void cycleHangMan() 
     {
+        ////system for cycling through the images
         GreenfootImage firstHangMan = hangManQueue.dequeue();
         hangManQueue.enqueue(firstHangMan);
         currentHangMan = hangManQueue.peek();
@@ -208,6 +213,7 @@ public class GameScreen extends World
         }
     }
     public void RandomStringPicker(int theme) {
+        //randomizer
         String[][] allArrays = {AnimalList.animals, CountriesList.countries, FoodList.food};
         
         Random rand = new Random();      

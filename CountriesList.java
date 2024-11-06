@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CountriesList extends World
 {
+    // list filled with all possible answers under the countries theme
     public static String[] countries = 
     {
          "algeria",
