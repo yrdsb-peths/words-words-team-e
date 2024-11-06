@@ -105,7 +105,6 @@ public class GameScreen extends World
         char[] charArray = { firstLetter, secondLetter, thirdLetter, fourthLetter, fifthLetter, 
                             sixthLetter, seventhLetter, eighthLetter, ninthLetter, tenthLetter, 
                             eleventhLetter };
-        System.out.println(charArray);
 
         String input = Greenfoot.ask("Input");
         totalGuesses++;
